@@ -43,7 +43,7 @@ function MyTabs() {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="History"
         component={History}
         options={{
@@ -54,7 +54,7 @@ function MyTabs() {
         
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }

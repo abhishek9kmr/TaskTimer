@@ -20,12 +20,8 @@ const AddTask = () => {
   const [selectedTask, setSelectedTask] = useState('Study');
   const [nameVal, setNameVal] = useState('');
   const [seconds, setSeconds] = useState('');
-  const task = useSelector((state) => state.task.value);
-
-  console.log("count123", task)
 
   const setSecond = (text) => {
-    // Allow only numeric values
     if (/^\d*$/.test(text)) {
       setSeconds(text);
     }
@@ -39,7 +35,7 @@ const AddTask = () => {
       Alert.alert("Please enter duration seconds")
       return
     }
-    dispatch(addTask({"name": nameVal, "seconds": seconds, "task": selectedTask, "status": "pause", timeRemaning: seconds}))
+    dispatch(addTask({"name": nameVal, "seconds": seconds, "task": selectedTask, "running": false, timeLeft: seconds}))
     setNameVal('')
     setSeconds('')
     navigation.navigate('TaskList')
